@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: sachindrck.github.io
+Token: 52594d471139511a06d8d51bf7628c0dbd9eab7366495e1095d3c30cc2d1fc9c
