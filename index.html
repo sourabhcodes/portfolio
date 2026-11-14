@@ -1,206 +1,394 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<title>Sourabh Agrawal</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-		<script src='https://kit.fontawesome.com/a076d05399.js'></script>
-	</head>
-	<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sourabh Agrawal: Application</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Courier+Prime:wght@400;700&family=Gochi+Hand&family=VT323&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#eadcbc;--sheet:#f3e9d2;--ink:#2b2119;--muted:#6e5a45;--blue:#1f3f9a;--crt:#2d5bd1;--red:#c8382d;--mustard:#e3b23c;--cream:#fbf5e6;--line:rgba(80,55,30,.18);
+--cut:'Bowlby One',Impact,sans-serif;--type:'Courier Prime',monospace;--hand:'Gochi Hand',cursive;--pix:'VT323',monospace}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--type);line-height:1.55;overflow-x:hidden;
+background-image:radial-gradient(ellipse at 15% 10%,rgba(255,250,235,.55),transparent 45%),radial-gradient(ellipse at 85% 60%,rgba(150,105,55,.18),transparent 50%),linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:auto,auto,120px 120px,120px 120px}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:200;opacity:.35;mix-blend-mode:multiply;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .35 0 0 0 0 .25 0 0 0 0 .15 0 0 0 .55 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+.wrap{max-width:1060px;margin:0 auto;padding:0 20px;position:relative}
+button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
+:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.cut{font-family:var(--cut);color:var(--blue);text-transform:uppercase;line-height:.95}
+.cut .w{display:inline-block;white-space:nowrap;margin-right:.28em}.cut .l{display:inline-block}
+.smile{display:inline-block;width:.6em;height:.6em;border:.08em solid currentColor;border-radius:50%;position:relative;vertical-align:middle;margin-left:.15em}
+.smile::before{content:"";position:absolute;left:22%;right:22%;bottom:22%;height:30%;border-bottom:.08em solid currentColor;border-radius:0 0 50% 50%}
+.smile::after{content:"";position:absolute;top:28%;left:26%;width:.08em;height:.08em;background:currentColor;box-shadow:.2em 0 currentColor;border-radius:50%}
+.sticker{position:absolute;filter:url(#rough) drop-shadow(2px 3px 0 rgba(60,35,15,.18));pointer-events:none;z-index:2}
+.sticker svg{width:100%;display:block}
+.tape{position:absolute;width:90px;height:26px;background:rgba(240,225,180,.75);border-left:2px dotted rgba(0,0,0,.08);border-right:2px dotted rgba(0,0,0,.08);z-index:4}
+.topbar{display:flex;justify-content:space-between;align-items:center;padding:22px 0;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);flex-wrap:wrap;gap:8px}
+.stamp{border:2px solid var(--red);color:var(--red);padding:3px 10px;transform:rotate(-4deg);font-weight:700;border-radius:3px}
+.hero{padding:30px 0 40px;display:grid;grid-template-columns:1.25fr 1fr;gap:30px;align-items:center;min-height:500px;position:relative}
+.hero h1{font-size:clamp(46px,7.5vw,92px);margin:10px 0 22px}
+.eyebrow{font-family:var(--hand);font-size:24px;color:var(--red)}
+.lede{font-size:16px;max-width:470px}
+.memo{margin-top:24px;background:var(--cream);padding:16px 20px;max-width:440px;transform:rotate(-1deg);box-shadow:3px 4px 0 rgba(60,35,15,.12);font-size:14px;background-image:linear-gradient(rgba(31,63,154,.12) 1px,transparent 1px);background-size:100% 24px;line-height:24px}
+.memo b{color:var(--blue)}
+.polaroid{background:var(--cream);padding:14px 14px 50px;box-shadow:4px 6px 0 rgba(60,35,15,.15);transform:rotate(3deg);position:relative;max-width:380px;margin-left:auto}
+.polaroid svg{width:100%;display:block;filter:url(#rough) sepia(.25) saturate(1.1)}
+.polaroid p{position:absolute;bottom:10px;left:0;right:0;text-align:center;font-family:var(--hand);font-size:24px}
+section{padding:46px 0;position:relative}
+.sec-head{display:flex;align-items:flex-end;gap:14px;margin-bottom:26px;flex-wrap:wrap}
+.sec-num{font-family:var(--hand);color:var(--red);font-size:28px;transform:rotate(-6deg)}
+h2.cut{font-size:clamp(34px,5vw,56px)}
+.summary{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.kpi{background:var(--cream);padding:22px 20px;box-shadow:3px 4px 0 rgba(60,35,15,.12)}
+.kpi:nth-child(1){transform:rotate(-1.5deg)}.kpi:nth-child(2){transform:rotate(1deg);background:#f6e2c8}.kpi:nth-child(3){transform:rotate(-.6deg)}
+.kpi b{font-family:var(--cut);font-size:46px;display:block;color:var(--red);line-height:1;font-weight:400}
+.kpi span{font-size:14px}
+.tabs{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:26px}
+.tab{display:flex;align-items:center;gap:12px;padding:10px 16px 14px 10px;background:#e9e0cc;border-radius:10px;box-shadow:inset 0 -6px 0 #bfb39a,inset 0 0 0 2px #cfc3a8,0 3px 0 #9e927a;transition:transform .12s}
+.tab .key{width:40px;height:40px;background:#f5efe0;border-radius:6px;display:grid;place-items:center;font-family:var(--cut);font-size:20px;color:var(--blue);box-shadow:inset 0 -3px 0 #d6ccb6}
+.tab span{font-weight:700;font-size:15px;text-align:left}
+.tab small{display:block;font-weight:400;font-size:11px;color:var(--muted)}
+.tab[aria-selected="true"]{transform:translateY(4px);box-shadow:inset 0 -2px 0 #bfb39a,inset 0 0 0 2px var(--blue);background:#dfe6f6}
+.panel{display:none;position:relative;background:var(--sheet);padding:42px 36px 36px;box-shadow:5px 6px 0 rgba(60,35,15,.14)}
+.panel::before{content:"";position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(90deg,transparent 46px,rgba(200,56,45,.25) 46px,rgba(200,56,45,.25) 48px,transparent 48px)}
+.panel.on{display:grid;grid-template-columns:1fr 1.05fr;gap:40px;align-items:start;animation:drop .5s cubic-bezier(.3,1.4,.5,1)}
+@keyframes drop{from{opacity:0;transform:translateY(-12px) rotate(-1deg)}to{opacity:1;transform:none}}
+.panel .tape.l{top:-12px;left:30px;transform:rotate(-6deg)}.panel .tape.r{top:-10px;right:36px;transform:rotate(5deg)}
+.panel h3{font-size:clamp(30px,4vw,42px);margin-bottom:14px}
+.panel p{font-size:15px}
+.deliv{margin-top:20px;border-top:2px dashed rgba(122,74,42,.35);padding-top:16px}
+.deliv h4{font-size:12px;letter-spacing:.12em;color:var(--red);margin-bottom:8px}
+.deliv li{list-style:none;padding:4px 0 4px 28px;position:relative;font-size:14px}
+.deliv li::before{content:"✕";position:absolute;left:4px;top:3px;color:var(--blue);font-family:var(--hand);font-size:20px;line-height:1}
+.panel .note{font-family:var(--hand);font-size:24px;color:var(--red);margin-top:18px;transform:rotate(-1.5deg);line-height:1.2}
+.proto{font-size:11px;color:var(--muted);letter-spacing:.1em;margin-bottom:12px;display:flex;justify-content:space-between}
+.crt{background:linear-gradient(#e9e1cd,#d8ccb1);border-radius:18px 18px 10px 10px;padding:18px 18px 34px;box-shadow:inset 0 -5px 0 #b9ac90,4px 6px 0 rgba(60,35,15,.18);position:relative;max-width:420px;margin:0 auto}
+.crt .led{position:absolute;bottom:13px;left:22px;width:7px;height:7px;border-radius:50%;background:#7bd36b;box-shadow:0 0 6px #7bd36b}
+.screen{position:relative;aspect-ratio:1/1;border-radius:14px/18px;overflow:hidden;background:#111;box-shadow:inset 0 0 0 6px #3b352c,inset 0 0 30px rgba(0,0,0,.6)}
+.screen::after{content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;background:repeating-linear-gradient(rgba(0,0,0,.14) 0 2px,transparent 2px 4px),radial-gradient(ellipse at center,transparent 55%,rgba(0,0,0,.45))}
+.qa{background:var(--crt);color:#e8efff;font-family:var(--pix);font-size:20px;padding:22px 22px 18px;display:flex;flex-direction:column;height:100%;line-height:1.2}
+.qa-top{display:flex;justify-content:space-between;opacity:.75;font-size:17px;margin-bottom:10px}
+.qa-q{font-size:24px;margin-bottom:12px;color:#fff}.qa-q::before{content:"> "}
+.qa-opts{display:grid;gap:6px}
+.qa-opts button{text-align:left;font-family:var(--pix);font-size:19px;color:#e8efff;padding:3px 8px;border:1px solid rgba(255,255,255,.35)}
+.qa-opts button:hover,.qa-opts button.pick{background:#e8efff;color:var(--crt)}
+.qa-reply{margin-top:10px;color:#fff6a8;min-height:24px}
+.qa-reply.typing::after{content:"█";animation:blink 1s steps(2) infinite}
+.qa-next{margin-top:auto;align-self:flex-end;font-family:var(--pix);font-size:19px;color:#fff;opacity:0;pointer-events:none}
+.qa-next.show{opacity:1;pointer-events:auto;animation:blink 1.4s steps(2) infinite}
+@keyframes blink{50%{opacity:0}}
+.flips{display:grid;gap:14px}
+.flip{perspective:900px;height:118px}
+.flip:nth-child(odd){transform:rotate(-1.2deg)}.flip:nth-child(even){transform:rotate(1deg)}
+.flip-in{position:relative;width:100%;height:100%;transition:transform .7s cubic-bezier(.3,1.4,.5,1);transform-style:preserve-3d;cursor:pointer}
+.flip.on .flip-in{transform:rotateX(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;border-radius:8px;padding:12px 16px;box-shadow:3px 4px 0 rgba(60,35,15,.16)}
+.front{background:var(--c);display:grid;grid-template-columns:1fr auto;align-items:center;gap:12px}
+.front .label{background:var(--cream);border-radius:4px;padding:8px 12px;height:100%;display:flex;flex-direction:column;justify-content:center;background-image:linear-gradient(rgba(31,63,154,.18) 1px,transparent 1px);background-size:100% 14px}
+.front .label b{font-family:var(--hand);font-size:25px;line-height:1;color:var(--blue);font-weight:400}
+.front .label small{font-size:11px;color:var(--muted)}
+.reels{display:flex;gap:10px;background:#2b2119;padding:10px 12px;border-radius:30px}
+.reels i{width:30px;height:30px;border-radius:50%;background:radial-gradient(circle,#fbf5e6 0 5px,#2b2119 6px 8px,#fbf5e6 9px);animation:spin 2.5s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.back{background:var(--cream);transform:rotateX(180deg);display:flex;gap:14px;align-items:center}
+.back .em{font-size:36px}.back p{font-size:13px;line-height:1.35}
+.onair{display:block;margin:6px auto 12px;padding:14px 30px;background:#3a2a22;color:#6b4a40;font-family:var(--cut);font-size:34px;letter-spacing:.06em;border-radius:8px;box-shadow:inset 0 0 0 4px #2b2119,3px 4px 0 rgba(60,35,15,.2);transition:.3s}
+.onair.on{background:var(--red);color:#fff;box-shadow:inset 0 0 0 4px #7a1d16,0 0 30px rgba(200,56,45,.7)}
+.cap{font-family:var(--hand);font-size:23px;color:var(--blue);text-align:center;min-height:70px;line-height:1.25}
+.pass{margin:14px auto 0;max-width:260px;background:var(--cream);padding:16px;text-align:center;box-shadow:3px 4px 0 rgba(60,35,15,.16);transform:rotate(-2deg);border-top:14px solid var(--blue)}
+.pass b{font-family:var(--cut);font-size:30px;color:var(--red);font-weight:400;display:block}
+.pass span{font-weight:700;display:block}.pass small{font-size:12px;color:var(--muted);line-height:1.3;display:block;margin-top:4px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.chip{padding:10px 16px;background:#e9e0cc;font-size:14px;font-weight:700;border-radius:6px;box-shadow:inset 0 -3px 0 #bfb39a}
+.chip.on{background:var(--blue);color:#fff;box-shadow:inset 0 -3px 0 #142c6e;transform:translateY(2px)}
+.rsvp{display:grid;grid-template-columns:1fr 1fr;gap:34px;background:var(--cream);padding:40px 34px;box-shadow:5px 6px 0 rgba(60,35,15,.14);border:12px solid transparent;border-image:repeating-linear-gradient(45deg,var(--red) 0 14px,var(--cream) 14px 28px,var(--blue) 28px 42px,var(--cream) 42px 56px) 12}
+.contract{font-size:14px;background-image:linear-gradient(rgba(31,63,154,.12) 1px,transparent 1px);background-size:100% 26px;line-height:26px}
+.contract h4{font-family:var(--cut);font-size:22px;color:var(--blue);font-weight:400;margin-bottom:6px}
+.contract ol{padding-left:20px}
+.lbl{font-size:11px;letter-spacing:.12em;color:var(--red);font-weight:700;margin:14px 0 4px}
+.contact a{color:var(--blue);font-weight:700;display:block;font-size:15px;word-break:break-all}
+.accept{display:block;text-align:center;text-decoration:none;margin-top:18px;background:var(--red);color:#fff;padding:16px;font-family:var(--cut);font-size:20px;text-transform:uppercase;box-shadow:4px 4px 0 var(--ink);transition:.15s}
+.accept:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
+footer{text-align:center;padding:40px 20px 70px;font-family:var(--hand);font-size:26px;color:var(--muted)}
+.confetti{position:fixed;top:-20px;width:12px;height:12px;z-index:150;pointer-events:none;animation:fall linear forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(600deg)}}
+@media (max-width:820px){.hero,.panel.on,.rsvp{grid-template-columns:1fr}.hero{min-height:0}.polaroid{margin:10px auto 0}.summary{grid-template-columns:1fr}.panel{padding:34px 20px 24px}.panel::before{display:none}.sticker.hs{display:none}.rsvp{padding:28px 18px}}
+@media (max-width:480px){.tab{flex:1 1 calc(50% - 14px)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute"><filter id="rough"><feTurbulence type="fractalNoise" baseFrequency=".04" numOctaves="2" seed="3"/><feDisplacementMap in="SourceGraphic" scale="2.4"/></filter></svg>
 
-		<!-- Header -->
-			<section id="header">
-				<header>
-					<span class="image avatar"><img src="images/avatar.jpg" alt="" /></span>
-					<h4 style="margin-top:-20px" id="logo"><a href="#">Sourabh Agrawal</a></h4>
-					<p>Three-fourth of an engineer<br />
-				</header>
-				<nav id="nav">
-					<ul>
-						<li><a href="#about" class="active">About</a></li>
-						<!--<li><a href="#education" class="active">Education</a></li>-->
-						<li><a href="#thingsIcanDo">Education</a></li>
-						<!--<li><a href="#projects">Projects</a></li>-->
-						<li><a href="#othersmallThings">Internships</a></li>
-						<li><a href="#contact">Contact</a></li>
-				
-					</ul>
-				</nav>
-				<footer>
-					<ul class="icons">
-						<li><a href="https://twitter.com/agrwal_sourabh?s=09" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-						<li><a href="https://www.linkedin.com/in/sourabh-agrawal-78b158193/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
-						<li><a href="mailto:asourabh51@gmail.com" class="icon fa-envelope"><span class="label">Email</span></a></li>
-						<li><a href="https://www.facebook.com/sourabh.agrawal.169405" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-						<li><a href="https://www.instagram.com/sourabh_agrawaal/" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-						
-					</ul>
-				</footer>
-			</section>
+<div class="wrap">
+  <div class="topbar"><span>Ref. SA-2026 · Sat 14 Nov 2026</span><span class="stamp">Open to offers</span></div>
+  <header class="hero">
+    <i class="sticker hs" data-s="sun" style="width:34px;top:4px;left:46%"></i>
+    <i class="sticker hs" data-s="star" style="width:46px;top:400px;left:47%;transform:rotate(-12deg)"></i>
+    <div>
+      <div class="eyebrow">a very official job application ↓</div>
+      <h1 class="cut" data-cut>Hello HR, hire me</h1>
+      <p class="lede">Two jobs, one cloud certification, one college talk show, and a track record of making slow things fast. No hidden fees, just clean code and clear communication.</p>
+      <div class="memo">
+        <b>CANDIDATE:</b> Sourabh Agrawal<br>
+        <b>CURRENTLY:</b> Software Engineer II, Goldman Sachs<br>
+        <b>BASE:</b> Bengaluru<br>
+        <b>BUDGET:</b> good problems &amp; clean code<br>
+        <b>VALID:</b> until you say yes
+      </div>
+    </div>
+    <div style="position:relative;padding-top:40px">
+      <div class="polaroid">
+        <span class="tape" style="top:-12px;left:50%;margin-left:-45px;transform:rotate(-3deg)"></span>
+        <svg viewBox="0 0 320 260" aria-label="Illustration of a desk with a laptop and mic">
+          <rect width="320" height="260" fill="#e9d2b2"/>
+          <rect x="22" y="22" width="90" height="84" fill="#9cbcdc"/><path d="M67 22v84M22 64h90" stroke="#e9d2b2" stroke-width="5"/>
+          <rect x="224" y="26" width="72" height="28" rx="3" fill="#c8382d"/><text x="233" y="46" font-family="Bowlby One" font-size="15" fill="#fbf5e6">ON AIR</text>
+          <rect y="190" width="320" height="70" fill="#b7ab98"/>
+          <rect x="106" y="116" width="112" height="72" rx="5" fill="#2b2119"/><rect x="114" y="123" width="96" height="56" fill="#2d5bd1"/>
+          <path d="M122 134h30M122 143h46M130 152h28M122 161h38" stroke="#cfdcff" stroke-width="3"/>
+          <rect x="92" y="188" width="140" height="8" rx="3" fill="#cfc4aa"/>
+          <circle cx="52" cy="128" r="13" fill="#2b2119"/><path d="M52 141V190M36 190h32" stroke="#2b2119" stroke-width="4"/>
+          <rect x="250" y="150" width="34" height="40" rx="4" fill="#fbf5e6" stroke="#2b2119" stroke-width="2"/><path d="M284 160c14 0 14 20-2 20" stroke="#2b2119" stroke-width="3" fill="none"/>
+          <path d="M260 142q-6-8 0-16M272 142q-6-8 0-16" stroke="#8a7a66" stroke-width="2" fill="none"/>
+        </svg>
+        <p>me, mid-deploy</p>
+      </div>
+    </div>
+  </header>
+</div>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+<section>
+  <div class="wrap">
+    <i class="sticker hs" data-s="sun" style="width:60px;top:10px;right:20px;transform:rotate(6deg)"></i>
+    <div class="sec-head"><span class="sec-num">01.</span><h2 class="cut" data-cut>The short version</h2></div>
+    <div class="summary">
+      <div class="kpi"><b>70%</b><span>faster PPM delivery after I optimised the compliance pipelines behind pre-trade validation</span></div>
+      <div class="kpi"><b>30%</b><span>less time spent investigating incidents, thanks to an AI log tool that replaced host-hopping</span></div>
+      <div class="kpi"><b>4+</b><span>years of building finance systems that people trust with real money</span></div>
+    </div>
+  </div>
+</section>
 
-				<!-- Main -->
-					<div id="main">
+<section id="ideas">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">02.</span><h2 class="cut" data-cut>Pick a chapter</h2></div>
+    <div class="tabs" role="tablist">
+      <button class="tab" role="tab" aria-selected="true" data-tab="gs"><span class="key">G</span><span><small>Chapter A</small>Goldman Sachs</span></button>
+      <button class="tab" role="tab" aria-selected="false" data-tab="tl"><span class="key">T</span><span><small>Chapter B</small>Techolution</span></button>
+      <button class="tab" role="tab" aria-selected="false" data-tab="mic"><span class="key">M</span><span><small>Chapter C</small>Off the clock</span></button>
+      <button class="tab" role="tab" aria-selected="false" data-tab="kit"><span class="key">K</span><span><small>Chapter D</small>Toolbox</span></button>
+    </div>
 
-						<!-- One -->
-							<section id="one">
-								<div class="container">
-									<header class="major" id="about">
-										<h2 style="font-size: 2em">Sourabh Agrawal</h2>
-									</header>
-									<p>Aaiye Aaiye!</p>
-									<p style="text-align: justify;">Hi there! I am a pre-final year undergrad at <a href="https://iitjammu.ac.in/">Indian Institute of Technology Jammu.</a>
-										<br><br>
-										I am an avid reader, a great lover of books. I am also keenly interested in movies/TV shows. I like to do anything with in-depth yet easy understanding. Let's take a short tour of i/me/myself.
-										<br><br>
-									</p>
-								</div>
-							</section>
+    <div class="panel on" id="gs" role="tabpanel">
+      <span class="tape l"></span><span class="tape r"></span>
+      <div>
+        <h3 class="cut" data-cut>The risk desk</h3>
+        <p>Software Engineer II since Aug 2024. I work where private equity and hedge fund orders meet pre-trade risk checks, so basically I build the part of the system that politely says “no” before an expensive mistake happens.</p>
+        <div class="deliv"><h4>What I shipped</h4><ul>
+          <li>Owned pre-trade validation workflows; cut PPM delivery timelines by 70%</li>
+          <li>Migrated legacy JSI modules to Spring Boot microservices</li>
+          <li>Built order-lifecycle features for the Alternatives OMS, so fund onboarding needs far less manual nudging</li>
+          <li>Redesigned Spark pipelines for recurring placement-fee automation</li>
+          <li>Built an AI log-analysis system with BQL: incident investigation 30% faster</li>
+        </ul></div>
+        <p class="note">→ no datacenter hosts were harmed in the making of this tool.</p>
+      </div>
+      <div>
+        <div class="proto"><span>Prototype · incident simulator</span><span>click an option</span></div>
+        <div class="crt"><div class="screen"><div class="qa" id="t1"></div></div><span class="led"></span></div>
+      </div>
+    </div>
 
-						<!-- Two -->
-							<section id="thingsIcanDo">
-								<div class="container">
-									<h3>Education</h3>
-									<p></p>
-									<ul class="feature-icons">
-										<li class="fa-graduation-cap">Indian Institute of Technology Jammu</li>
-										<p style="font-size: 13px; padding-left: 70px; padding-top: 0px ">Chemical Engineering (2018-2022)</p>
-										<li class="fa-university">Bina Public Hr. Sec. School</li>
-										<p style="font-size: 13px; padding-left: 70px; padding-top: 0px ">Class XII</p>
-										<li class="fa-university">Nirmal Jyoti Sr. Sec. School</li>
-										<p style="font-size: 13px; padding-left: 70px; padding-top: 0px ">Class X</p>
-									</ul>
-								</div>
-							</section>
+    <div class="panel" id="tl" role="tabpanel">
+      <span class="tape l"></span><span class="tape r"></span>
+      <div>
+        <h3 class="cut" data-cut>Spreadsheet whisperer</h3>
+        <p>Jul 2022 to Jul 2024, Hyderabad. My first job out of IIT Jammu: backend engineering for a financial automation platform serving a leading global book publisher. Chemical engineer by degree, so I’m used to things reacting unexpectedly in production.</p>
+        <div class="deliv"><h4>What I shipped</h4><ul>
+          <li>Backend services for the finance automation platform</li>
+          <li>Pipelines that ate monthly global Excel reports for breakfast</li>
+          <li>Legacy on-prem databases moved to scalable cloud</li>
+          <li>Live financial and operational dashboards</li>
+        </ul></div>
+        <p class="note">→ I have read “final_v3_FINAL.xlsx” so you don’t have to.</p>
+      </div>
+      <div>
+        <div class="proto"><span>Prototype · flip the tapes</span><span>tap each one</span></div>
+        <div class="flips" id="flips"></div>
+      </div>
+    </div>
 
-							<section id="thingsIcanDo">
-								<div class="container">
-									<h3>Things I Love to Do</h3>
-									<p></p>
-									<ul class="feature-icons">
-										<li class="fa-code">Code</li>
-										<li class="fa-html5">Reading books(a lot)</li>
-										<li class="fa-gamepad">Watching movies and TV shows</li>
-										<li class="fa-coffee">Listening to podcasts</li>
-										<li class="fa-camera">Following current affairs</li>
-									</ul>
-								</div>
-							</section>
+    <div class="panel" id="mic" role="tabpanel">
+      <span class="tape l"></span><span class="tape r"></span>
+      <div>
+        <h3 class="cut" data-cut>Before the code</h3>
+        <p>Before I wrote software for banks, I wrote stories on campus. Plot twist: it is the same skill. Find the signal, ask the awkward question, ship before the deadline.</p>
+        <div class="deliv"><h4>Press clippings</h4><ul>
+          <li>Founded the journalism club at my college</li>
+          <li>Started and co-hosted a talk show called Talk n Tea</li>
+          <li>Published campus reports and interviews on all sorts of topics</li>
+        </ul></div>
+        <p class="note">→ yes, I can explain an outage in plain English. Slides optional.</p>
+      </div>
+      <div>
+        <div class="proto"><span>Prototype · the studio</span><span>tap the sign</span></div>
+        <button class="onair" id="onair" aria-pressed="false">ON AIR</button>
+        <p class="cap" id="cap">The studio is quiet. Tap the sign.</p>
+        <div class="pass"><b>PRESS</b><span>Sourabh Agrawal</span><small>Founder, Journalism Club<br>Co-host, Talk n Tea</small></div>
+      </div>
+    </div>
 
-						<!-- Three -->
-							<section id="othersmallThings">
-									<div class="container">
-										<h3>Internships</h3><br><br>
-										<div class="features">
-										<article>
-											<a href="https://www.isid.ac.in/" class="image"><img height="200" style="width:85%" src="images/isi.png" alt="" /></a>
-											<div class="inner">
-												<h4>BARC Bombay - Summer Internship</h4>
-												<p>May - July 2020<br>Analytical Study of non-conventional Biogas Plant</p>
-												
-											</div>
-										</article>
-									</div>
-									</div>
-								</section>
-								<section id="othersmallThings">
-									<div class="container">
-										<br>
-										<h3>Skill Stats...</h3>
-										<p></p>
-										<div class="row">
-											<div class="col-md-6">MATLAB
-												<div class="progress"> 
-													<div class="progress-bar" role="progressbar" style="background-color:#004de6;width: 70%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-												</div> <br>
-											</div>
-											<div class="col-md-6">Git and Github
-												<div class="progress"> 
-													<div class="progress-bar" role="progressbar" style="background-color:#dd4b25;width: 45%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-												</div> <br>
-											</div>
-											<div class="col-md-6">Data Structure
-												<div class="progress">
-													<div class="progress-bar bg-info" role="progressbar" style="width: 40%" aria-valuenow="76" aria-valuemin="0" aria-valuemax="100"></div>
-												</div> <br>
-											</div>
-											<div class="col-md-6">Algorithms
-												<div class="progress">
-													<div class="progress-bar" role="progressbar" style="background-color:#70759c;width: 30%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-												</div> <br>
-											</div>
-										</div>
+    <div class="panel" id="kit" role="tabpanel">
+      <span class="tape l"></span><span class="tape r"></span>
+      <div>
+        <h3 class="cut" data-cut>The toolbox</h3>
+        <p>Java and Spring Boot are home, but I move between languages, clouds and databases without getting lost.</p>
+        <div class="deliv"><h4>In the bag</h4><ul>
+          <li>Java, Python, Scala, Go, C/C++, JS/TS</li>
+          <li>Kafka, Spark, GraphQL, microservices, CQRS, SAGA</li>
+          <li>SQL Server, MongoDB, Oracle, Sybase IQ, GCP and AWS</li>
+          <li>Google Cloud Certified Professional Data Engineer (2023)</li>
+          <li>Side quest: an AI tutoring chatbot (FastAPI, Qdrant, OpenAI, React) that answers from NCERT textbooks</li>
+        </ul></div>
+        <p class="note">→ IIT Jammu, B.Tech (Chemical), 2022.</p>
+      </div>
+      <div>
+        <div class="proto"><span>Prototype · tap a skill</span><span>each has a comment</span></div>
+        <div class="chips" id="chips"></div>
+        <p class="cap" id="quip">Pick a chip. They all have opinions.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-										<div class="row">
-											<div class="col-md-6">C++
-												<div class="progress"> 
-													<div class="progress-bar bg-warning" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-												</div> <br>
-											</div>
-											<div class="col-md-6">HTML
-												<div class="progress"> 
-													<div class="progress-bar" role="progressbar" style="background-color:#00ffff;width: 55%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-												</div> <br>
-											</div>
-										</div>
-										<div class="row">
-											<div class="col-md-6"> CSS
-												<div class="progress"> 
-													<div class="progress-bar" role="progressbar" style="background-color:#3e852c;width: 40%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-												</div> <br>
-											</div>
-										</div> <br><br>
-									</div>
-									</section>
-								
-						<!-- Four -->
-							<section id="contact">
-								<div class="container">
-									<form method="post" action="#">
-										
-										<div class="row uniform">
-											<div class="12u">
-												<ul class="actions">
-													<li class="text-center">
-														<h3>Contact Me</h3> <br>
-														<input id="sendMessage" type="button" class="special" value="Send Message" />
-													</li>
-													<script>
-														document.getElementById('sendMessage').addEventListener('click',function(){
-															window.location.href ='mailto:asourabh51@gmail.com';
-														});
-													</script>
-												</ul>
-											</div>
-										</div>
-									</form>
-								</div>
-							</section>
-					</div>
-				<!-- Footer -->
-					<section id="footer">
-						<div class="container">
-							<ul class="copyright">
-								<li>Sourabh Agrawal @ <a href="https://github.com/sourabhcodes">sourabhcodes</a>.</li>
-							</ul>
-						</div>
-					</section>
+<section>
+  <div class="wrap">
+    <i class="sticker hs" data-s="star" style="width:44px;top:40px;right:60px;transform:rotate(10deg)"></i>
+    <div class="sec-head"><span class="sec-num">03.</span><h2 class="cut" data-cut>Talk n Tea, HR edition</h2></div>
+    <div class="panel on" style="margin-top:0">
+      <span class="tape l"></span><span class="tape r"></span>
+      <div>
+        <h3 class="cut" data-cut>Interview me first</h3>
+        <p>I used to host a talk show, so I can’t resist an interview. Here is a tiny version you can run before booking the real one. Pick a question and see how I’d answer.</p>
+        <p class="note">→ no cameras, no pressure, just straight answers.</p>
+      </div>
+      <div class="crt"><div class="screen"><div class="qa" id="t2"></div></div><span class="led"></span></div>
+    </div>
+  </div>
+</section>
 
-			</div>
+<section>
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">04.</span><h2 class="cut" data-cut>Sign here</h2></div>
+    <div class="rsvp">
+      <div class="contract">
+        <h4>Terms &amp; conditions</h4>
+        <ol>
+          <li>The candidate (me) agrees to ship features, not excuses.</li>
+          <li>The employer (you) agrees to one honest chat about the role.</li>
+          <li>Incidents get investigated before blame is assigned.</li>
+          <li>Offer letters accepted in any format. Email preferred, carrier pigeons tolerated.</li>
+          <li>Feature requests are welcome. Scope creep is negotiable.</li>
+        </ol>
+      </div>
+      <div class="contact">
+        <div class="lbl">Email</div><a href="mailto:asourabh51@gmail.com">asourabh51@gmail.com</a>
+        <div class="lbl">Phone</div><a href="tel:+918889618851">+91 88896 18851</a>
+        <div class="lbl">LinkedIn</div><a href="https://linkedin.com/in/sourabh-agrawal-78b158193" target="_blank" rel="noopener">linkedin.com/in/sourabh-agrawal-78b158193</a>
+        <a class="accept" id="resume" href="https://drive.google.com/file/d/1s3EvlSB4rXCTznBGfVRhWZj2DAhw2tYW/view?usp=sharing" target="_blank" rel="noopener">Open my resume</a>
+      </div>
+    </div>
+  </div>
+</section>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollzer.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="assets/js/main.js"></script>
-			
-	</body>
+<footer>made with a suspicious number of commits ♡ Sourabh</footer>
+
+<script>
+const S={
+sun:'<svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="8" fill="#e3b23c"/><g stroke="#e3b23c" stroke-width="3" stroke-linecap="round"><path d="M20 3v5M20 32v5M3 20h5M32 20h5M8 8l3 3M29 29l3 3M8 32l3-3M29 11l3-3"/></g></svg>',
+star:'<svg viewBox="0 0 70 70"><path d="M35 4 L44 26 L66 28 L48 42 L54 64 L35 52 L16 64 L22 42 L4 28 L26 26Z" fill="#e8c53a" stroke="#c99a1e" stroke-width="3" stroke-linejoin="round"/></svg>',
+cup:'<svg viewBox="0 0 110 70"><ellipse cx="55" cy="58" rx="50" ry="10" fill="#f4f1ea" stroke="#9fb0d6" stroke-width="2"/><path d="M22 20 h66 c0 26 -12 38 -33 38 c-21 0 -33 -12 -33 -38Z" fill="#fbf9f4" stroke="#9fb0d6" stroke-width="2"/><ellipse cx="55" cy="20" rx="33" ry="7" fill="#8a5a33"/><path d="M88 26 c14 0 14 18 -2 18" stroke="#9fb0d6" stroke-width="4" fill="none"/></svg>'};
+document.querySelectorAll('[data-s]').forEach(e=>e.innerHTML=S[e.dataset.s]);
+
+let seed=7;const rnd=()=>{seed=(seed*9301+49297)%233280;return seed/233280};
+document.querySelectorAll('[data-cut]').forEach(el=>{
+  const words=el.textContent.trim().split(/\s+/);el.textContent='';
+  words.forEach(w=>{const ws=document.createElement('span');ws.className='w';
+    [...w].forEach(ch=>{const l=document.createElement('span');l.className='l';l.textContent=ch;
+      l.style.transform=`rotate(${(rnd()-.5)*10}deg) translateY(${(rnd()-.5)*5}px) scale(${.94+rnd()*.12})`;ws.appendChild(l)});
+    el.appendChild(ws)});
+  if(el.tagName==='H1'){const s=document.createElement('span');s.className='smile';el.appendChild(s)}
+});
+
+const tabs=document.querySelectorAll('.tab');
+tabs.forEach(t=>t.addEventListener('click',()=>{
+  tabs.forEach(x=>x.setAttribute('aria-selected','false'));t.setAttribute('aria-selected','true');
+  document.querySelectorAll('#ideas .panel').forEach(p=>p.classList.toggle('on',p.id===t.dataset.tab));
+}));
+
+function term(id,title,qs){
+  const el=document.getElementById(id);let i=0,t;
+  function r(){
+    const d=qs[i];
+    el.innerHTML=`<div class="qa-top"><span>${title}&gt;</span><span>${i+1}/${qs.length}</span></div><div class="qa-q">${d.q}</div><div class="qa-opts">${d.o.map((o,k)=>`<button data-k="${k}">[${k+1}] ${o}</button>`).join('')}</div><div class="qa-reply"></div><button class="qa-next">${i<qs.length-1?'NEXT &gt;&gt;':'RESTART &lt;&lt;'}</button>`;
+    const rep=el.querySelector('.qa-reply'),nx=el.querySelector('.qa-next');
+    el.querySelectorAll('.qa-opts button').forEach(b=>b.onclick=()=>{
+      el.querySelectorAll('.qa-opts button').forEach(x=>x.classList.remove('pick'));b.classList.add('pick');
+      clearInterval(t);const s='» '+d.r[b.dataset.k];rep.textContent='';rep.classList.add('typing');let n=0;
+      t=setInterval(()=>{rep.textContent+=s[n++];if(n>=s.length){clearInterval(t);rep.classList.remove('typing');nx.classList.add('show')}},22);
+    });
+    nx.onclick=()=>{clearInterval(t);i=(i+1)%qs.length;r()};
+  }
+  r();
+}
+term('t1','C:\\PROD',[
+ {q:"3 AM. Prod alert. Now what?",o:["SSH into every host","Ask the AI log tool","Pretend I didn't see it"],
+  r:["Three hosts and one existential crisis later... retired method.","Logs centralised, root cause found, investigation time down 30%. Back to sleep.","Bold strategy. Not endorsed by this engineer."]},
+ {q:"A risky fund order shows up. Then?",o:["Let it through","Run pre-trade validation","Ask for a vibe check"],
+  r:["That is how incident reports get written.","Correct. It is the primary risk defence, and I owned that workflow.","Vibes are not a compliance control. Validation it is."]}
+]);
+term('t2','C:\\INTERVIEW',[
+ {q:"What do you want to know first?",o:["Handles pressure?","Communicates well?","Learns fast?"],
+  r:["I owned pre-trade risk checks for PE and hedge fund orders. Pressure is just Tuesday.","I founded a journalism club and hosted a talk show. I'll even write the incident report with a headline.","Chemical engineer, then backend, then GCP certified, then AI log tools. Curve and I are on good terms."]},
+ {q:"Favourite kind of problem?",o:["Messy legacy code","Slow pipelines","Data chaos"],
+  r:["I migrated legacy JSI modules to Spring Boot. Messy is my comfort zone.","I cut PPM delivery by 70%. Slow makes me restless.","Excel reports, on-prem databases, ledgers. Bring it."]},
+ {q:"Biggest weakness?",o:["Be honest","Is it Excel?"],
+  r:["I cannot leave a flaky pipeline alone. Also my biggest strength, annoyingly.","No. I have automated enough Excel to forgive it."]},
+ {q:"When can you start?",o:["ASAP?","Next quarter?","Right now?"],
+  r:["Send the offer and I will send the calendar invite.","I will bring a roadmap too.","Bold. Let me finish this sentence first."]}
+]);
+
+const fd=[
+ {c:'#c8382d',em:'💸',f:'Finance platform',b:'Backend services for a global book publisher’s finance automation.',n:'Side A'},
+ {c:'#1f3f9a',em:'📊',f:'Excel to insight',b:'Monthly global Excel reports now flow through automated pipelines.',n:'Side B'},
+ {c:'#e3b23c',em:'☁️',f:'Cloud move',b:'Legacy on-prem databases migrated to a scalable cloud setup.',n:'Bonus'},
+ {c:'#7a4a2a',em:'📈',f:'Live dashboards',b:'Real-time financial and operational views for stakeholders.',n:'B-side'}
+];
+const fl=document.getElementById('flips');
+fd.forEach(c=>{const d=document.createElement('div');d.className='flip';d.setAttribute('tabindex','0');
+  d.innerHTML=`<div class="flip-in"><div class="face front" style="--c:${c.c}"><div class="label"><small>${c.n}</small><b>${c.f}</b></div><div class="reels"><i></i><i></i></div></div><div class="face back"><div class="em">${c.em}</div><p>${c.b}</p></div></div>`;
+  d.onclick=()=>d.classList.toggle('on');d.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();d.classList.toggle('on')}};fl.appendChild(d)});
+
+const oa=document.getElementById('onair'),cap=document.getElementById('cap');
+oa.onclick=()=>{const on=oa.classList.toggle('on');oa.setAttribute('aria-pressed',on);
+  cap.textContent=on?'Live from Talk n Tea: today’s guest is the HR reading this. First question: when do I start?':'The studio is quiet. Tap the sign.'};
+
+const quips={Java:'Spring Boot, because I like my beans managed.',Spark:'Pipelines that stay leak-free. Mostly.',Kafka:'Lots of messages. I read every one.',Python:'Glue for everything, including side projects.',GCP:'Certified Professional Data Engineer, and yes, I read the docs.',RAG:'My chatbot answers from textbooks, not from vibes.',Microservices:'Small services, big opinions.',Go:'Gopher approved.'};
+const ch=document.getElementById('chips'),qp=document.getElementById('quip');
+Object.keys(quips).forEach(k=>{const b=document.createElement('button');b.className='chip';b.textContent=k;
+  b.onclick=()=>{ch.querySelectorAll('.chip').forEach(x=>x.classList.remove('on'));b.classList.add('on');qp.textContent=quips[k]};ch.appendChild(b)});
+
+document.getElementById('resume').addEventListener('click',()=>{
+  const cols=['#c8382d','#1f3f9a','#e3b23c'],em=['🎙️','⭐','💌','🚀'];
+  for(let i=0;i<60;i++){const c=document.createElement('i');c.className='confetti';c.style.left=Math.random()*100+'vw';
+    if(i%4===0){c.textContent=em[i%em.length];c.style.fontSize='20px';c.style.width='auto';c.style.height='auto'}else c.style.background=cols[i%3];
+    c.style.animationDuration=2.2+Math.random()*2.5+'s';c.style.animationDelay=Math.random()*.5+'s';
+    document.body.appendChild(c);setTimeout(()=>c.remove(),5500)}
+});
+</script>
+</body>
 </html>
